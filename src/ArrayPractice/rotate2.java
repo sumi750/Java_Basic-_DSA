@@ -12,7 +12,7 @@ public class rotate2 {
             last--;
         }
     }
-
+    // Replace code
     public static void replace(int arr[], int k)
     {
         int n = arr.length;
@@ -27,7 +27,7 @@ public class rotate2 {
             System.out.print(arr[i] + " ");
         }
     }
-
+    //Main Code
     public static void main(String[] args) {
         // rotate array without using extra space
         Scanner sc = new Scanner(System.in);

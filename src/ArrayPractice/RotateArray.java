@@ -21,6 +21,8 @@ public class RotateArray {
 
         k = k % n;
 
+
+        // Reverse Code
         int ans[] = new int[n];
         int j = 0;  // for traversing
         for(int i=n-k; i<n; i++){
