@@ -2,7 +2,7 @@ package ArrayPractice;
 
 import java.util.*;
 
-public class Sort {
+ public class Sort {
 
     // Bubble Sort
     public static void bubble(int arr[]){
