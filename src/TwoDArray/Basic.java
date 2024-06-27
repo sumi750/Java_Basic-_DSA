@@ -1,6 +1,18 @@
 package TwoDArray;
 import java.util.*;
 public class Basic {
+    public static void search(int matrix[][], int key){
+        for(int i=0; i<matrix.length; i++){
+            for(int j=0; j< matrix[0].length; j++){
+                if(matrix[i][j] == key){
+                    System.out.println("True");
+                    return;
+                }
+            }
+        }
+        System.out.println("false");
+        return;
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the value of row ");
@@ -22,6 +34,9 @@ public class Basic {
             }
             System.out.println();
         }
+
+        int key = 10;
+        search(matrix, key);
         sc.close();
     }
 }
