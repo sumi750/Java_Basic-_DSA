@@ -14,7 +14,8 @@ public class stringCompresion {
 
     public static void main(String[] args) {
 //        compression of string
-        String str = " Hello My Name is Sumit ";
+        String str = "       Hello      My Name is Tony ";
+        System.out.println(str);
         String ans ="";
         StringBuilder sb = new StringBuilder("");
 
@@ -32,7 +33,9 @@ public class stringCompresion {
                 sb = new StringBuilder("");
             }
         }
-
+        ans = ans.replaceAll(" +", " ");
+        ans.trim();
+//        System.out.println(ss);
         System.out.println(ans);
     }
 }
