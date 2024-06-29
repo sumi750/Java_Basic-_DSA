@@ -1,8 +1,6 @@
 package Bit_ManiPulation;
 
 import java.util.*;
-
-//import java.util.*;
 public class basicBit {
     public static int decTobin(int n){
         int poww = 0;
@@ -23,6 +21,5 @@ public class basicBit {
         int bin = sc.nextInt();
         int dec = decTobin(bin);
         System.out.println("Decimal number is "+ dec);
-
     }
 }
