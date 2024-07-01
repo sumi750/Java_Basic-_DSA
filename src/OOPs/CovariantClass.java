@@ -1,5 +1,4 @@
 package OOPs;
-
 public class CovariantClass {
     public static void main(String[] args) {
         Client c = new Client();
