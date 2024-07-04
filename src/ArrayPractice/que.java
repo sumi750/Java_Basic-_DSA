@@ -24,10 +24,10 @@ public class que {
 
         boolean m = sortedOrNot(arr);
         if(m){
-            System.out.println("1");
+            System.out.println("Array is Sorted");
         }
         else{
-            System.out.println("0");
+            System.out.println("Array is Not Sorted");
         }
     }
 }
