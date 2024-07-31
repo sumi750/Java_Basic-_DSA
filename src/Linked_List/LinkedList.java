@@ -12,6 +12,7 @@ public class LinkedList {
     public static class linkedList{
         Node head = null;
         Node tail = null;
+        int size = 0;
         void insertAtEnd(int data){
             Node temp = new Node(data);
             if(head == null){
@@ -21,6 +22,7 @@ public class LinkedList {
                 tail.next = temp; // Null change into temp
             }
             tail = temp;
+            size++;
         }
 
         void insertAtStart(int data){
@@ -32,12 +34,13 @@ public class LinkedList {
                 temp.next = head;
                 head = temp;
             }
+            size++;
         }
 
         void insertAtIndex(int index, int data){
             Node t = new Node(data); // New Node is created
             Node temp = head;
-            if(index==size()){
+            if(index==size){
                 insertAtEnd(data);
                 return;
             }
@@ -45,7 +48,7 @@ public class LinkedList {
                 insertAtStart(data);
                 return;
             }
-            else if(index<0 || index>size()){
+            else if(index<0 || index>size){
                 System.out.println("Wrong Index ");
                 return;
             }
@@ -54,6 +57,7 @@ public class LinkedList {
             }
             t.next = temp.next;
             temp.next = t;
+            size++;
         }
         int getElement(int index){
             Node temp = head;
@@ -61,6 +65,15 @@ public class LinkedList {
                 temp = temp.next;
             }
             return temp.data;
+        }
+
+        void deleteAtIndex(int index){
+            Node temp = head;
+            for(int i=1; i<=index-1; i++){
+                temp = temp.next;
+            }
+            temp.next = temp.next.next;
+            size--;
         }
 
         void display(){
@@ -73,13 +86,14 @@ public class LinkedList {
         }
 
         int size(){
-            Node temp = head;
-            int count = 0;
-            while(temp!=null){
-                temp = temp.next;
-                count++;
-            }
-            return count;
+//            Node temp = head;
+//            int count = 0;
+//            while(temp!=null){
+//                temp = temp.next;
+//                count++;
+//            }
+//            return count;
+            return size;
         }
 
 
@@ -92,10 +106,13 @@ public class LinkedList {
             ll.insertAtStart(5);
             ll.insertAtStart(6);
             ll.display();
-            ll.insertAtIndex(10,9);
+            ll.insertAtIndex(1,9);
+            ll.display();
+            ll.deleteAtIndex(4);
             ll.display();
             System.out.println();
-            System.out.println("Size of ll is "+ ll.size());
+            System.out.println("Size of ll is "+ ll.size);
             System.out.println(ll.getElement(3));
+
     }
 }
