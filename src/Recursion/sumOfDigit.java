@@ -26,6 +26,24 @@ public class sumOfDigit {
         }
     }
 
+    public static int PpowerQ(int p, int q){
+        if(q==0) return 1;
+        return PpowerQ(p,q-1)*p;
+    }
+
+    public static int PpowerQQ(int p,int q){
+        if(q==0) return 1;
+        int power = PpowerQ(p,q/2);
+        if(q%2==0){
+            return power*power;
+        }
+        else{
+            return power*power*p;
+        }
+    }
+
+
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the value of ");
@@ -35,7 +53,10 @@ public class sumOfDigit {
         System.out.println("Sum of the digits is " + result);
         System.out.print("Reverse Number is " + " ");
         reverseDigit(n);
-//        System.out.println(reverse);
+        int p = sc.nextInt();
+        int q = sc.nextInt();
+        System.out.println(PpowerQ(p,q));
+        System.out.println(PpowerQQ(p,q));
 
     }
 }

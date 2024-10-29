@@ -20,6 +20,11 @@ public class Fibnochii {
         return prevPrev + prev;
     }
 
+    public static int sod(int n ){
+        if(n>=1 && n<=9) return n;
+        return sod(n/10) + n%10;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the value of N");
@@ -32,7 +37,9 @@ public class Fibnochii {
             sum = sum + fab(i);
         }
         System.out.println();
-
+//
         System.out.println("Sum until nth fib "+ sum);
+        int num = sc.nextInt();
+        System.out.println(sod(num));
     }
 }

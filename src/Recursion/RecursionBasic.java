@@ -11,17 +11,17 @@ public class RecursionBasic {
             return;
         }
 
-        printNumber(n-1);
+        printNumber(n-1);   // making the call stack
         System.out.print(n + " ");
 
     }
 
     public static void printDec(int n){
-        if(n == 0){
-            System.out.print(n + " ");
+        if(n==1){
+            System.out.println(n);
             return;
         }
-        System.out.print(n + " ");
+        System.out.println(n+" ");
         printDec(n-1);
     }
 
@@ -37,14 +37,10 @@ public class RecursionBasic {
     }
 
     public static int nSum(int n){
-
-        if(n == 1){
-            return n;
+        if(n==1){
+            return 1;
         }
-
-        int snm1 = nSum(n-1);
-        int sn = n + snm1;
-        return sn;
+        return n + nSum(n-1);  //Self Work
     }
 
     public static void main(String[] args) {
