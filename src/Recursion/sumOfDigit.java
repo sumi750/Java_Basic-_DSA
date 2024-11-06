@@ -26,11 +26,14 @@ public class sumOfDigit {
         }
     }
 
+    //p power q --> O(n)
     public static int PpowerQ(int p, int q){
         if(q==0) return 1;
         return PpowerQ(p,q-1)*p;
     }
 
+
+    //p power q --> O(logn)
     public static int PpowerQQ(int p,int q){
         if(q==0) return 1;
         int power = PpowerQ(p,q/2);

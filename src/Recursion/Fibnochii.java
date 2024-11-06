@@ -20,6 +20,7 @@ public class Fibnochii {
         return prevPrev + prev;
     }
 
+    // Sum of Digit
     public static int sod(int n ){
         if(n>=1 && n<=9) return n;
         return sod(n/10) + n%10;
