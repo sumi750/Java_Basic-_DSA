@@ -41,8 +41,12 @@ public class BST {
             return false;
         }
         if(root.data == key) return true;
-        if(root.data > key) return search(root.left, key);
-        if(root.data < key) return search(root.right, key);
+        if(root.data > key) {
+            return search(root.left, key);
+        }
+        if(root.data < key) {
+            return search(root.right, key);
+        }
         return false;
     }
 
@@ -66,6 +70,7 @@ public class BST {
 
     //Delete a Node
     public static Node delete(Node root, int val) {
+        if(root == null) return root;
         if (root.data < val) {
             root.right = delete(root.right, val);
         } else if (root.data > val) {
@@ -101,16 +106,54 @@ public class BST {
         }
         return root;
     }
+
+    //Print Number in Range
+    public static void printInRange(Node root, int k1, int k2){
+        if(root == null) {
+            return;
+        }
+        if(root.data > k1){
+             printInRange(root.left, k1, k2);
+        }
+
+        if(root.data >= k1 && root.data <= k2){
+            System.out.print(root.data+" ");
+        }
+        //lies everything in right subtree
+        if(root.data < k2){
+            printInRange(root.right, k1,k2);
+        }
+    }
+
+    public static void printPath(ArrayList<Integer> lists){
+        for(int list: lists){
+            System.out.print(list+"->");
+        }
+        System.out.println("null");
+    }
+
+    //Root to Leaf Paths
+    public static void Print2leaf(Node root, ArrayList<Integer> list){
+        if(root == null) return;
+        list.add(root.data);
+
+        if(root.left == null && root.right == null){
+            printPath(list);
+        }
+        Print2leaf(root.left, list);
+        Print2leaf(root.right, list);
+        list.remove(list.size()-1);
+    }
     
 
 
     public static void main(String[] args) {
         //InOrder of BST Traversal gives a sorted sequence
         Scanner sc = new Scanner(System.in);
-        int values[] = {5,1,3,4,2,7,24,9,8};
+        int[] values = {5,1,3,4,2,7,24,9,8};
         Node root = null;
-        for(int i = 0; i<values.length; i++){
-            root = insert(root, values[i]);
+        for(int i : values){
+            root = insert(root,i);
         }
         inorder(root);
         System.out.println();
@@ -125,7 +168,15 @@ public class BST {
         System.out.println("Max  in Tree " +  max(root).data);
         System.out.println("Deletion in BST tree enter a element ");
         int m = sc.nextInt();
-        root = delete(root,n);
+        root = delete(root,m);
         inorder(root);
+        System.out.println("enter k1 ");
+        int k1 = sc.nextInt();
+        System.out.println("Enter k2");
+        int k2 = sc.nextInt();
+        printInRange(root,k1,k2);
+        System.out.println();
+        System.out.println("Root to Leaf Path ");
+        Print2leaf(root, new ArrayList<>());
     }
 }
