@@ -68,7 +68,7 @@ public class BST {
         return temp;
     }
 
-    //Delete a Node
+    //Delete a Node(Important)
     public static Node delete(Node root, int val) {
         if(root == null) return root;
         if (root.data < val) {
@@ -144,6 +144,14 @@ public class BST {
         Print2leaf(root.right, list);
         list.remove(list.size()-1);
     }
+
+    //Valid BST (Important)
+    public static boolean isVaild(Node root, Node min, Node max){
+        if(root == null) return true;
+        if(min != null && root.data <= min.data) return false;
+        if(max != null && root.data >= max.data) return false;
+        return isVaild(root.left, min, root) && isVaild(root.right, root, max);
+    }
     
 
 
@@ -151,6 +159,7 @@ public class BST {
         //InOrder of BST Traversal gives a sorted sequence
         Scanner sc = new Scanner(System.in);
         int[] values = {5,1,3,4,2,7,24,9,8};
+//        int[] values = {1,1,1,};
         Node root = null;
         for(int i : values){
             root = insert(root,i);
@@ -178,5 +187,11 @@ public class BST {
         System.out.println();
         System.out.println("Root to Leaf Path ");
         Print2leaf(root, new ArrayList<>());
+          if(isVaild(root, null, null)){
+              System.out.println("Is valid");
+          }
+          else{
+              System.out.println("Not valid");
+          }
     }
 }
