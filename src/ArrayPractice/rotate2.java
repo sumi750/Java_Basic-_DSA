@@ -12,7 +12,7 @@ public class rotate2 {
             last--;
         }
     }
-    // Replace code
+    // Replace code --Rotate by k steps
     public static void replace(int arr[], int k)
     {
         int n = arr.length;
