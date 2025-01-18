@@ -222,7 +222,7 @@ public class temp {
         System.out.println(Arrays.toString(z));
 
         //Check if the 2 arrays are equal or not
-
+        
 
     }
 }
