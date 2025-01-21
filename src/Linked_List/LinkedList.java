@@ -19,7 +19,7 @@ public class LinkedList {
                 head = temp;
             }
             else{
-                tail.next = temp; // Null change into temp
+                tail.next = temp; // Null change into ArrayPractice.temp
             }
             tail = temp;
             size++;
