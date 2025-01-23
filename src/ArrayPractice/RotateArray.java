@@ -6,7 +6,7 @@ public class RotateArray {
         // Rotate Array By Kth times
         System.out.print("Enter the array");
         int size = 5;
-        int arr[] = new int[size];
+        int[] arr = new int[size];
         for(int i =0; i<arr.length; i++){
             arr[i] = sc.nextInt();
         }
@@ -23,7 +23,7 @@ public class RotateArray {
 
 
         // Reverse Code
-        int ans[] = new int[n];
+        int[] ans = new int[n];
         int j = 0;  // for traversing
         for(int i=n-k; i<n; i++){
             ans[j++] = arr[i];
