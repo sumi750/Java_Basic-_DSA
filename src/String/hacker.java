@@ -7,8 +7,8 @@ public class hacker{
         a = a.toLowerCase();
         b = b.toLowerCase();
         // into char Array
-        char x[] = a.toCharArray();
-        char y[] = b.toCharArray();
+        char[] x = a.toCharArray();
+        char[] y = b.toCharArray();
 
         int n = x.length;
         int m = y.length;

@@ -26,7 +26,7 @@ public class KmultipleOfN {
         System.out.print("Enter the value of K ");
         int k = sc.nextInt();
         Kmultiples(n,k);
-
+        System.out.println();
         //Alternate Sum Series
         System.out.println("Alternate Sum Series ");
         int a = sc.nextInt();

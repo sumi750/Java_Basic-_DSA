@@ -9,7 +9,7 @@ public class RemoveDuplicates {
         }
 
         char ch = st.charAt(idx);
-        if(seen[ch-'a'] == true){
+        if(seen[ch-'a']){
             removeD(st,idx+1,sb, seen);
         }
         else{
@@ -23,6 +23,6 @@ public class RemoveDuplicates {
         Scanner sc = new Scanner(System.in);
         String st = sc.nextLine();
         boolean[] arr = new boolean[26];
-        removeD(st,0,new StringBuilder(""), arr);
+        removeD(st,0,new StringBuilder(), arr);
     }
 }

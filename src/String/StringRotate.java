@@ -2,6 +2,7 @@ package String;
 import java.util.*;
 public class StringRotate {
     public static boolean rotate(String s1, String s2){
+
         return s1.length() == s2.length() && (s1+s2).contains(s2);
     }
     public static void main(String[] args) {

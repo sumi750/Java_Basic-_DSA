@@ -11,7 +11,6 @@ public class sumOfDigit {
         int rem = dgtSum(n/10);
         return lastDigit + rem;
     }
-
     // Reverse of the digit
     public static void reverseDigit(int n){
 

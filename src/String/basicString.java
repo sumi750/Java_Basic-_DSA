@@ -12,7 +12,7 @@ public class basicString {
     public static void main(String[] args) {
         // String Topic
         Scanner sc = new Scanner(System.in);
-        char arr[] = {'a','b','c'};
+        char[] arr = {'a','b','c'};
         String str = "Sumit";    // direct method
         String str2 = new String("hello World");  // using new keyWord
 
