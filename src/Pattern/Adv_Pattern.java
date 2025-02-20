@@ -4,6 +4,13 @@ import java.util.Scanner;
 
 public class Adv_Pattern {
     public static void hollow_rec(int row, int colum){
+        //Hallow rectangle
+        /*
+        *****
+        *   *
+        *   *
+        *****
+         */
         for(int i=1; i<=row; i++){
             for(int j=1; j<=colum; j++){
                 // cell(i,j)
@@ -18,6 +25,8 @@ public class Adv_Pattern {
             System.out.println();
         }
     }
+
+    //Inverted And Rotated Half pyramid
 
     public static void inverted_pattern(int n){
         // outer loop

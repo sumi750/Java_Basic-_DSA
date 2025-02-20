@@ -20,11 +20,31 @@ public class Bubble_Sort {
         }
     }
 
+    //Bubble Sort using Recursion
+    static void bubble2(int[] arr, int length, int c){
+        if(length == -1) return;
+        if(c < length){
+            if(arr[c] > arr[c+1]){
+                int temp = arr[c];
+                arr[c] = arr[c+1];
+                arr[c+1] = temp;
+            }
+            bubble2(arr,length, c+1);
+        }
+
+        else{
+            bubble2(arr, length-1, 0);
+        }
+    }
+
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[] arr = {1,2,3,4,5};
+        int[] arr = {1,5,4,6,3,2};
         bubble(arr);
         System.out.println(Arrays.toString(arr));
+        int[] arr2 = {1,4,5,3,9,7,6};
+        bubble2(arr2,arr.length, 0);
+        System.out.println(Arrays.toString(arr2));
     }
 }

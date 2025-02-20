@@ -45,7 +45,7 @@ public class Star {
             }
             System.out.println();
         }
-        System.out.println("Pattern in Triangle  Or FLoyd;s Triangle ");
+        System.out.println("Pattern in Triangle  Or FLoyds Triangle ");
         int l = 1;
         for(int i=1; i<=n; i++){
             for(int j=1; j<=i; j++){
