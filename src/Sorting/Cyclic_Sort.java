@@ -2,7 +2,7 @@ package Sorting;
 
 import java.util.Arrays;
 
-public class CyclicSort {
+public class Cyclic_Sort {
     public static void sortC(int[] arr){
         int i=0;
         while(i < arr.length){

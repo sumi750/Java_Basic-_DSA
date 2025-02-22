@@ -1,6 +1,6 @@
 package Sorting;
 import java.util.*;
-public class Insertion {
+public class Insertion_Sort {
     public static void insertion(int[] arr){
         int n = arr.length;
         for(int i=1; i<n; i++){
