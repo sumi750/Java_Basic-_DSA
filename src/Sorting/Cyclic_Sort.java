@@ -23,7 +23,7 @@ public class Cyclic_Sort {
     }
 
     public static void main(String[] args) {
-        int[] arr = {3,5,1,4,2,7,6};
+        int[] arr = {3,5,1,4,2,7,6,9,8,10};
         sortC(arr);
         System.out.println(Arrays.toString(arr));
     }
