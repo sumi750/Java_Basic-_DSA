@@ -1,10 +1,10 @@
 package ArrayPractice;
 import java.util.*;
 public class subarray {
-    public static void MaxSubArray(int arr[]){
+    public static void MaxSubArray(int[] arr){
         int maxSum = Integer.MIN_VALUE;
         int currSum=0;
-        int prefix[] =  new int[arr.length];
+        int[] prefix =  new int[arr.length];
 
         prefix[0] = arr[0];
         for(int i=1; i<arr.length; i++){
@@ -23,8 +23,8 @@ public class subarray {
         }
         System.out.println("Max sum is "+ maxSum);
     }
-    // Kadaan's Algorithm
-    public static void kadanSum(int arr[]){
+    // Kadan's Algorithm
+    public static void kadanSum(int[] arr){
         int currSum =0;
         int maxSum = Integer.MIN_VALUE;
         for(int i=0; i< arr.length; i++){
