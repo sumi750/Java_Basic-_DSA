@@ -14,6 +14,7 @@ public class createGraph {
     private int vertices;
     private ArrayList<ArrayList<Edge>> adjList;
 
+    //Create Graph
     public createGraph(int vertices){
         this.vertices = vertices;
         adjList = new ArrayList<>(vertices);
@@ -30,7 +31,7 @@ public class createGraph {
         adjList.get(des).add(new Edge(src,wt));
     }
 
-    //BFS
+    //BFS --> uses Queue for traversal
     public  void bfs(int start){
         Queue<Integer> q = new LinkedList<>();
         boolean[] visited = new boolean[vertices];
@@ -51,6 +52,31 @@ public class createGraph {
             }
         }
         System.out.println();
+    }
+
+    //DFS using recursion--> use a Stack or call Stack for traversing
+
+    public void dfs(int start){
+        boolean[] visited = new boolean[vertices];  //Array size == vertices
+        System.out.print("DFS Traversal  ");
+        dfsHelper(start, visited);
+        System.out.println();
+    }
+
+    public void dfsHelper(int node, boolean[] visit){
+        visit[node] = true;
+        System.out.print(node+ " ");
+        for(Edge edge: adjList.get(node)){
+            if(!visit[edge.des]){
+                dfsHelper(edge.des, visit);
+            }
+        }
+    }
+
+    //Delete and Edge from the Graph
+    public void deleteEdge(int src, int des){
+        adjList.get(src).removeIf(edge -> edge.des == des);
+        adjList.get(des).removeIf(edge -> edge.des == src);
     }
 
     //display
@@ -77,7 +103,13 @@ public class createGraph {
 
         g.printG();
         g.bfs(4);
+        g.dfs(4);
 
+        System.out.println("Deleting a (1,4) ");
+        g.deleteEdge(1,4);
+
+        System.out.println("Graph after delete Edge ");
+        g.printG();
 
     }
 }

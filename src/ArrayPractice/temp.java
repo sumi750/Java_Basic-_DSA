@@ -211,7 +211,7 @@ public class temp {
         rotate(arr2, k);
         System.out.println(Arrays.toString(arr2));
 
-        //Second largest element in array (if there is no duplicate elements)
+        //2nd largest element in array (if there is no duplicate elements)
         int[] m = {5,9,7,6,3,4,6,3,12,4,8,10};
         System.out.println("Second Largest Element in this Array is "+ largestSecond(m));
 
