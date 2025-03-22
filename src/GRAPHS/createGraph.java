@@ -90,6 +90,25 @@ public class createGraph {
         }
     }
 
+    //isPath
+    public  boolean hasPath(int src, int des){
+        boolean[] visit = new boolean[vertices];
+        return path(src, des, visit);
+    }
+
+    private boolean path(int src, int des, boolean[] visit){
+        if(src == des) return true;
+
+        visit[src] = true;
+
+        for(Edge e : adjList.get(src)){
+            if(!visit[e.des]){
+                if(path(e.des, des, visit)) return true;
+            }
+        }
+        return false;
+    }
+
 
     public static void main(String[] args) {
         createGraph g = new createGraph(6); // Graph with 5 vertices
@@ -104,6 +123,8 @@ public class createGraph {
         g.printG();
         g.bfs(4);
         g.dfs(4);
+
+        System.out.println(g.hasPath(0,3));
 
         System.out.println("Deleting a (1,4) ");
         g.deleteEdge(1,4);
