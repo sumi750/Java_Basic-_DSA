@@ -102,7 +102,7 @@ public class temp {
 
     }
 
-    //Second Largest Elements in Array -->(If there is No duplicate largest element)
+    //2nd Largest Elements in Array -->(If there is No duplicate largest element)
     public static int largestSecond(int[] arr){
         int max1;
         int max2;
@@ -130,20 +130,31 @@ public class temp {
     }
 
     //Second Largest Element in Array (if there duplicate largest elements)
-    public static void largestSecondd(int[] arr){
-        int size = arr.length;
-        Arrays.sort(arr); // Gives the sorted Array
-        if(size < 2) {
-            System.out.println("Invalid Input ");
-            return;
+    public static int largestSecondd(int[] arr){
+
+        if(arr.length < 2){
+            System.out.println("Array should have at least two diff elements");
+            return -1;
         }
 
-        for(int i = size-2; i>=0; i--){
-            if(arr[i] != arr[size-1]){
-                System.out.println("Second largest element is "+ arr[i]);
-                return;
+        int max1 = Integer.MIN_VALUE;
+        int max2 = Integer.MIN_VALUE;
+
+        for(int num : arr){
+            if(num > max1){
+                max2 = max1;
+                max1 = num;
+            }
+            else if(num < max1 && num > max2){
+                max2 = num;
             }
         }
+
+        if(max2 == Integer.MIN_VALUE){
+            System.out.println("No 2nd Largest");
+            return -1;
+        }
+        return max2;
     }
 
 
@@ -204,7 +215,7 @@ public class temp {
             System.out.print(a[i]+ " ");
         }
         System.out.println();
-        //Rotate Array by K Steps
+        //Rotate Array by K Steps   (Imp)
         System.out.println("Rotating array by K steps");
         int[] arr2 = {1,5,9,7,6,2,3,7,10};
         int k = sc.nextInt();
@@ -215,15 +226,15 @@ public class temp {
         int[] m = {5,9,7,6,3,4,6,3,12,4,8,10};
         System.out.println("Second Largest Element in this Array is "+ largestSecond(m));
 
-        int[] x = {5,9,7,6,3,4,6,12,3,12,4,8,10};
-        largestSecondd(x);
+        int[] x = {5,9,7,6,3,4,6,12,3,12,4,8,10};   //(imp)
+        System.out.println(largestSecondd(x));
 
-        //move All zeros to the end array
+        //move All zeros to the end array   (imp)
         int[] z = {0,5,0,7,9,0,6,4,3,0,1};
         moveZeros(z);
         System.out.println(Arrays.toString(z));
 
-        //Check if the 2 arrays are equal or not
+
         
 
     }

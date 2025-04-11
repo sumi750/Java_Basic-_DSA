@@ -29,6 +29,7 @@ public class topLogical_Sort {
         graph[3].add(new Edge(3,1));
     }
 
+    //TopLogical Sort using DFS on DAG
     public static ArrayList<Integer> topSort(int V, ArrayList<Edge>[] graph){
         boolean[] vis = new boolean[V];
         Stack<Integer> s = new Stack<>();
@@ -60,11 +61,55 @@ public class topLogical_Sort {
         s.push(curr);
     }
 
+    public static void calInDeg(ArrayList<Edge>[] graph, int[] inDeg){
+        for(int i=0; i<graph.length; i++){
+            int v = i;
+            for(int j=0; j<graph[v].size(); j++){
+                Edge e = graph[v].get(j);
+                inDeg[e.des]++;
+            }
+        }
+    }
+
+    //TopLogical Sort Using BFS on DAG
+    public static ArrayList<Integer> topSortBFS(int V, ArrayList<Edge>[] graph){
+        int[] inDeg = new int[V];
+        calInDeg(graph, inDeg);
+
+        Queue<Integer> q = new LinkedList<>();
+        ArrayList<Integer> list = new ArrayList<>();
+
+        for(int i=0; i<V; i++){
+            if(inDeg[i] == 0) q.add(i);
+        }
+
+        //bfs
+        while(!q.isEmpty()){
+            int curr = q.remove();
+            list.add(curr);
+
+            for(int i=0; i<graph[curr].size(); i++){
+                Edge e = graph[curr].get(i);
+                inDeg[e.des]--;
+                if(inDeg[e.des] == 0){
+                    q.add(e.des);
+                }
+            }
+        }
+
+        if (list.size() != V) {
+            throw new RuntimeException("Graph is not a DAG (contains a cycle)");
+        }
+
+        return list;
+    }
+
     public static void main(String[] args) {
         int V = 6;
         ArrayList<Edge>[] graph = new ArrayList[V];
         crateGraph(graph);
 
-        System.out.println("Topological Sort "+  topSort(V, graph));
+        System.out.println("TopLogical Sort "+  topSort(V, graph));
+        System.out.println("TopLogical Sort using BFS" + topSortBFS(V, graph));
     }
 }
