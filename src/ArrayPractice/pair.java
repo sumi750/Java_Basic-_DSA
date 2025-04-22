@@ -2,7 +2,7 @@ package ArrayPractice;
 import java.util.*;
 public class pair {
     // Print Pair
-    public static void printPair(int numbers[]) {
+    public static void printPair(int[] numbers) {
         int tPair = 0;
         for (int i = 0; i < numbers.length; i++){
             int current = numbers[i];
@@ -16,7 +16,7 @@ public class pair {
     }
 
     // SubArray
-    public static void subArray(int number[]){
+    public static void subArray(int[] number){
         int maxSum = Integer.MIN_VALUE;
         int minSum = Integer.MAX_VALUE;
         for(int i=0; i<number.length; i++){

@@ -5,13 +5,13 @@ public class BuyAndSell {
         int buyPrice = Integer.MAX_VALUE;
         int maxProfit = 0;
 
-        for(int i=0; i<arr.length; i++){
-            if(buyPrice < arr[i]){
-                int profit = arr[i] - buyPrice;
+        for(int price : arr){
+            if(buyPrice < price){
+                int profit = price - buyPrice;
                 maxProfit = Math.max(profit, maxProfit);
             }
             else{
-                buyPrice = arr[i];
+                buyPrice = price;
             }
         }
         return maxProfit;
