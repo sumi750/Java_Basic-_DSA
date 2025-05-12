@@ -1,28 +1,58 @@
 package TwoDArray;
+import java.math.BigInteger;
 import java.util.*;
 
 public class spiralMatrix {
 
-        public static void main(String[] args) {
-            Scanner sc = new Scanner(System.in);
-            System.out.print("Enter the value of row ");
-            int n = sc.nextInt();
-            System.out.print("Enter the value of column ");
-            int m = sc.nextInt();
-            int matrix[][] = new int[n][m];
-//        int n = matrix.length,  m = matrix[0].length;
+        public static ArrayList<Integer> spirallyTraverse(int[][] mat){
+            ArrayList<Integer> ans = new ArrayList<>();
+            int rowStart=0, rowEnd = mat.length-1;
+            int colStart=0, colEnd = mat[0].length-1;
 
-            for(int i=0; i<n; i++){
-                for(int j=0; j<m; j++){
-                    matrix[i][j] = sc.nextInt();
+            while(rowStart<=rowEnd && colStart<=colEnd){
+
+                //Top
+                for(int j=colStart; j<=colEnd; j++){
+                    ans.add(mat[rowStart][j]);
+                }
+                rowStart++;
+
+                //Right
+                for(int j=rowStart; j<=rowEnd; j++){
+                    ans.add(mat[j][colEnd]);
+                }
+                colEnd--;
+
+                //Bottom
+                if(rowStart<=rowEnd){
+                    for(int j=colEnd; j>=colStart; j--){
+                        ans.add(mat[rowEnd][j]);
+                    }
+                    rowEnd--;
+                }
+
+                //Left
+                if(colStart<=colEnd){
+                    for(int j=rowEnd; j>=rowStart; j--){
+                        ans.add(mat[j][colStart]);
+                    }
+                    colStart++;
                 }
             }
-            // Out put
-            for(int i=0; i<n; i++) {
-                for (int j = 0; j < m; j++) {
-                    System.out.print(matrix[i][j] + " ");
-                }
-                System.out.println();
+            return ans;
+        }
+
+        public static void main(String[] args) {
+            int[][] mat = {
+                    {1, 2, 3, 4},
+                    {5, 6, 7, 8},
+                    {9, 10, 11, 12},
+                    {13, 14, 15, 16}
+            };
+
+            ArrayList<Integer> res = spirallyTraverse(mat);
+            for (int num : res) {
+                System.out.print(num + " ");
             }
         }
 }
