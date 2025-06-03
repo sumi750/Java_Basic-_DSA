@@ -23,6 +23,30 @@ public class Max_Chain_Length {
         }
 
         System.out.println("Max Length Of Chain is " + ans);
+
+        // Assign Cookies problem
+        int[] greed = {1,5,3,3,4};
+        int[] s = {4,2,1,2,1,3};
+
+        System.out.println("Total number of children with satisfied cookies " + aSign(greed, s));
+
+
     }
+
+    public static int aSign(int[] greed, int[] s){
+        Arrays.sort(greed);
+        Arrays.sort(s);
+
+        int i=0, j=0;
+
+        while(i< greed.length && j < s.length){
+            if(s[j] >= greed[i]){
+                i++;
+            }
+            j++;
+        }
+        return i;
+    }
+
 
 }
