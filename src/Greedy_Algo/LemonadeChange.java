@@ -41,6 +41,5 @@ public class LemonadeChange {
 
         System.out.println("For arr " + change(arr));
         System.out.println("For arr2 " + change(arr2));
-
     }
 }
