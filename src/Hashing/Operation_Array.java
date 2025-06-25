@@ -37,7 +37,7 @@ public class Operation_Array {
 
     public static List<List<Integer>> difference(int[] arr, int[] arr2){
 
-        //set1 - set2 &7 set2 - set1
+        //set1 - set2 & set2 - set1
         Set<Integer> set1 = new HashSet<>();
         Set<Integer> set2 = new HashSet<>();
 

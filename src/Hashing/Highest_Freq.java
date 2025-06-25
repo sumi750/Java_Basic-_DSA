@@ -19,6 +19,6 @@ public class Highest_Freq {
             }
         }
 
-        System.out.println(mostFreq);
+        System.out.println(mostFreq + "count  " + maxFreq);
     }
 }

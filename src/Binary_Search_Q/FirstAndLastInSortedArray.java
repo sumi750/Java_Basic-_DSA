@@ -1,5 +1,4 @@
 package Binary_Search_Q;
-import ArrayPractice.Sort;
 
 import java.util.*;
 public class FirstAndLastInSortedArray {

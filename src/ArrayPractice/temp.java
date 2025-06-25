@@ -176,21 +176,6 @@ public class temp {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-//        String[] arr = {"mass", "as", "hero", "superhero"};
-//        ArrayList<String> list = new ArrayList<>();
-//        for(int i = 0; i< arr.length; i++){
-//            for(int j=0; j< arr.length; j++){
-//                if(i == j ) continue; // miss kar raha tha
-//                if(arr[i].contains(arr[j])){
-//                    list.add(arr[j]);
-//                    break;
-//         }
-//            }
-//        }
-//        System.out.println(list.size());
-//        for(int i = 0; i< list.size(); i++){
-//            System.out.print(list.get(i)+ " ");
-//        }
         int[] arr =  { 1,5,8,8,9,10,10,17};
         System.out.println(Arrays.toString(arr));
         System.out.println();

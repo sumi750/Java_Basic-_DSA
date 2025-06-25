@@ -19,8 +19,8 @@ public class FirstUniqueChar {
         return -1;
     }
     public static void main(String[] args) {
-        String s = "lleetcode";
+        String s = "alleetcode";
         int index = firstUnique(s);
-        System.out.println("Index of Unique First Char is "+ index);
+        System.out.println( "First unique char is " + s.charAt(index) + " and its index is " + index);
     }
 }

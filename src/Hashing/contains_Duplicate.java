@@ -1,21 +1,20 @@
 package Hashing;
 
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class contains_Duplicate {
     public static boolean isDuplicate(int[] arr){
-        HashMap<Integer, Integer> map = new HashMap<>();
+        HashSet<Integer> set = new HashSet<>();
 
-        for(int num : arr){
-            if(map.containsKey(num)){
-                return true;
-            }
-            map.put(num , 1);
+        for(int a : arr){
+            if(set.contains(a)) return true;
+            set.add(a);
         }
         return false;
     }
     public static void main(String[] args) {
-        int[] arr = {1,5,8,9,9,6,4,7};
+        int[] arr = {1,2,3,4,5,6,6};
         System.out.println(isDuplicate(arr));
     }
 }

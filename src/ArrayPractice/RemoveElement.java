@@ -7,8 +7,8 @@ public class RemoveElement {
         int v = val;
         for(int i=0; i<arr.length; i++){
             if(arr[i]!=v){
-                arr[count] = arr[i];
-                count++;
+                arr[count++] = arr[i];
+
             }
         }
         return count;
@@ -34,16 +34,14 @@ public class RemoveElement {
         int count = 0;
         for(int i=0; i<arr.length-1; i++){
             if(arr[i] != arr[i+1]){
-                arr[count] = arr[i];
-                count++;
+                arr[count++] = arr[i];
             }
         }
-        arr[count] = arr[arr.length-1];
-        count++;
+        arr[count++] = arr[arr.length-1];
         return count;
     }
 
-    public static int remove(int arr[]){
+    public static int remove(int[] arr){
         int count = 0;
         for(int n:arr){
             if(count < 2 || n!=arr[count-2]){
