@@ -2,11 +2,15 @@ package Sorting;
 import java.util.*;
 
 public class Merge_Sort {
+    static int inversion = 0;
     public static void main(String[] args) {
-        int[] arr = {4,6,1,2,9,3,7,5,10,15,11};
+//        int[] arr = {4,6,1,2,9,3,7,5,10,15,11};
+//        int[] arr = {1,3,5,10,2,6,8,9};
+        int[] arr = {2,4,1,3,5};
         System.out.println("Unsorted Array " +Arrays.toString(arr));
         arr = mergeSort(arr);
         System.out.println("Sorted Array " + Arrays.toString(arr));
+        System.out.println("Inversion count " + inversion);
     }
 
     static int[] mergeSort(int[] arr){
@@ -29,6 +33,7 @@ public class Merge_Sort {
 
             else{
                 mix[k++] = right[j++];
+                inversion += (left.length-i);
             }
         }
 
