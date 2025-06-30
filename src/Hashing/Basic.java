@@ -26,5 +26,13 @@ public class Basic {
             System.out.println("Key = "+ key + ", Value= "+hm.get(key));
         }
 
+        Set<Integer> se = new HashSet<>();
+        se.add(1);
+        se.add(101);
+        se.add(89);
+        se.add(9);
+
+        System.out.println(se);
+
     }
 }

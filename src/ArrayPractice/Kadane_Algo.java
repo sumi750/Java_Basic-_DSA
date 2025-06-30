@@ -1,9 +1,9 @@
 package ArrayPractice;
 import java.util.*;
-public class subarray {
+public class Kadane_Algo {
     public static void MaxSubArray(int[] arr){
         int maxSum = Integer.MIN_VALUE;
-        int currSum=0;
+        int currSum = 0;
         int[] prefix =  new int[arr.length];
 
         prefix[0] = arr[0];
@@ -23,21 +23,16 @@ public class subarray {
         }
         System.out.println("Max sum is "+ maxSum);
     }
-    // Kadan's Algorithm
-    public static void kadanSum(int[] arr){
+    // Kadane's Algorithm
+    public static int kadaneSum(int[] arr){
         int currSum =0;
         int maxSum = Integer.MIN_VALUE;
-        for(int i=0; i< arr.length; i++){
-            currSum = currSum + arr[i];
-            if(currSum < 0){
-                currSum = 0;
-            }
-//            maxSum = Math.max(currSum, maxSum);
-            if(currSum > maxSum){
-                maxSum = currSum;
-            }
+        for(int num : arr){
+            currSum = Math.max(num, currSum+num);
+            if(currSum < 0) currSum = 0;
+            maxSum = Math.max(currSum, maxSum);
         }
-        System.out.println("our max su  is : " + maxSum);
+        return maxSum;
 
     }
     public static void main(String[] args) {
@@ -45,18 +40,18 @@ public class subarray {
         // Sum Of SubArray Using Prefix Method
         System.out.print("Enter the value of N ");
         int n = sc.nextInt();
-        int arr[] = new int[n];
+        int[] arr = new int[n];
         for(int i=0; i<arr.length; i++){
             arr[i] = sc.nextInt();
         }
 
         System.out.print("Array is ");
-        for(int i=0; i<arr.length; i++){
-            System.out.print(arr[i] + " ");
+        for(int num : arr){
+            System.out.print(num + " ");
         }
         System.out.println();
-//        MaxSubArray(arr);
-        kadanSum(arr);
+        MaxSubArray(arr);
+        System.out.println(kadaneSum(arr));
         sc.close();
     }
 }
