@@ -9,35 +9,34 @@ public class Quick_Sort {
         System.out.println("Sorted array is " + Arrays.toString(arr));;
     }
 
-    static void sort(int[] arr, int low, int high){
-        if(low >= high) return;
+    public static void sort(int[] arr, int low , int high){
+        if(low < high){
+            int PI = part(arr, low, high);
 
-        int start = low;
-        int end = high;
-        int mid = start + (end - start)/2;
-        int pivot = arr[mid];
+            sort(arr, low, PI-1);   //left Half
+            sort(arr, PI+1, high);   //right half
+        }
+    }
 
-        while(start <= end){
-            while(arr[start] < pivot){
-                start++;
-            }
+    private static int part(int[] arr, int low, int high){
+        int idx = low-1;
+        int pivot = arr[high];
 
-            while(arr[end] > pivot){
-                end--;
-            }
-
-            //check condition again
-            if(start <= end){
-                int temp = arr[start];
-                arr[start] = arr[end];
-                arr[end] = temp;
-                start++;
-                end--;
+        for(int i=low; i<high; i++){
+            if(arr[low] <= pivot){
+                idx++;
+                int temp = arr[idx];
+                arr[idx] = arr[i];
+                arr[i] = temp;
             }
         }
+        idx++;
+        int temp = arr[idx];
+        arr[idx] = arr[high];
+        arr[high] = temp;
 
-        //now pivot is at correct position, sort two halves
-        sort(arr, low, end);
-        sort(arr, start, high);
+        return idx;
     }
+
+
 }

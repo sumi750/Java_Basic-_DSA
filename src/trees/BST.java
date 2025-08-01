@@ -71,11 +71,17 @@ public class BST {
     //Delete a Node(Important)
     public static Node delete(Node root, int val) {
         if(root == null) return root;
+
+        //Searching of Node
         if (root.data < val) {
             root.right = delete(root.right, val);
-        } else if (root.data > val) {
+        }
+        else if (root.data > val) {
             root.left = delete(root.left, val);
-        } else {
+        }
+
+        //Deletion of Node
+        else {
             //case : 1 (No child)
             if (root.left == null && root.right == null) {
                 return null;
@@ -98,7 +104,7 @@ public class BST {
         return root;
     }
 
-    //Inorder Successor
+    //Inorder Successor (leftmost of right subtree)
     public static Node inorderSFind(Node root){
         //No need of Null Case
         while(root.left != null){
@@ -152,7 +158,27 @@ public class BST {
         if(max != null && root.data >= max.data) return false;
         return isVaild(root.left, min, root) && isVaild(root.right, root, max);
     }
-    
+
+    static int count = 0;
+    static int result = -1;
+
+    //Kth largest In BST
+    public static int kLargest(Node root, int k){
+        inOrderLargest(root, k);
+        return result;
+    }
+
+    private static void inOrderLargest(Node root, int k){
+        if(root == null) return;
+        inOrderLargest(root.right, k);
+        count++;
+        if(count == k){
+            result = root.data;
+            return;
+        }
+
+        inOrderLargest(root.left, k);
+    }
 
 
     public static void main(String[] args) {
@@ -166,6 +192,7 @@ public class BST {
         }
         inorder(root);
         System.out.println();
+        System.out.println(kLargest(root, 2));
         System.out.println("Searching in Tree ");
         System.out.println("Enter element u want to search ");
         int n = sc.nextInt();

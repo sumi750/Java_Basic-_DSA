@@ -1,29 +1,24 @@
 package Recursion;
 import java.util.*;
 public class RemoveDuplicates {
-    public static void removeD(String st, int idx, StringBuilder sb, boolean[] seen){
+    public static String removeD(String st, int idx, String result){
 
-        if(idx == st.length()) {
-            System.out.println(sb);
-            return;
-        }
+        if(idx == st.length()) return result;
 
         char ch = st.charAt(idx);
-        if(seen[ch]){
-            removeD(st,idx+1,sb, seen);
+
+        if(result.indexOf(ch) == -1){
+            result += ch;
         }
-        else{
-            seen[ch] = true;
-            removeD(st, idx+1, sb.append(ch), seen);
-        }
+
+        return removeD(st, idx+1, result);
 
 
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String st = sc.nextLine();
-        boolean[] arr = new boolean[256];
-        removeD(st,0,new StringBuilder(), arr);
+        System.out.println(removeD(st,0,""));
         System.out.println(remove(st));
     }
 

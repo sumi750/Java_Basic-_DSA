@@ -4,27 +4,18 @@ public class RemoveOccurenceFromString {
 
 
     //Remove occur from string
-    public static String removeO(String st, int idx){
+    public static String removeO(String st, String newSt){
         // Base Case
-        if(idx == st.length()) return "";
+        if(st.isEmpty()) return newSt;
 
-        //Recursive Work
-        String smallA = removeO(st, idx+1);
-
-        char currChar = st.charAt(idx);
-
-        //self work
-        if(currChar != 'a'){
-            return currChar + smallA;
-        }
-        else{
-            return smallA;
-        }
+        char ch = st.charAt(0);
+        if(ch == 'a') return removeO(st.substring(1), newSt);
+        else return removeO(st.substring(1), newSt+ch);
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String st = sc.nextLine();
-        System.out.println(removeO(st, 0));
+        System.out.println(removeO(st, ""));
     }
 }

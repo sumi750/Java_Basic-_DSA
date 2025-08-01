@@ -1,46 +1,49 @@
 package OOPs;
-//import java.util.*;
+import java.util.*;
+
 public class BasicOops{
+
+    public static class Student{
+        private String name;
+        private int age;
+        private int marks ;
+
+
+        //setter()
+        void setName(String name){
+            this.name = name;
+        }
+        void setAge(int age){
+            if(age > 0){
+                this.age = age;
+            }
+            else{
+                System.out.println("Invalid Age");
+            }
+        }
+
+        void setMarks(int marks){
+            this.marks = marks;
+        }
+
+        //getter()
+
+        String getName(){return name;}
+        int getAge(){return age;}
+        int getMarks(){return marks;}
+
+    }
+
+
     public static void main(String[] args) {
-         Pen p1 = new Pen();
-         p1.setColor("Blue");
-         p1.setTip(2);
-         p1.setPrice(5);
-        System.out.println(p1.getColor());
-        System.out.println(p1.getTip());
-        System.out.println(p1.getPrice());
+         Student s1 = new Student();
+         s1.setName("Sumit");
+         s1.setAge(18);
+         s1.setMarks(96);
+        System.out.println(s1.getName());
+        System.out.println(s1.getAge());
+        System.out.println(s1.getMarks());
     }
 }
 
-class Pen{
-    //Properties + functions
-    private String color;
-    private int tip;
-    private int price;
-
-    // Getter
-    String getColor(){
-        return this.color;
-    }
-
-    int getTip(){
-        return this.tip;
-    }
-
-    int getPrice(){
-        return this.price;
-    }
-
-    //Setter
-    void setColor(String newColor){
-        color = newColor;
-    }
-    void setTip(int newTip){
-        tip = newTip;
-    }
-
-    void setPrice(int newPrice){
-        price = newPrice;
-    }
-}
 

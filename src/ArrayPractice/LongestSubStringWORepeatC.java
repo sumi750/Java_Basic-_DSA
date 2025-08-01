@@ -30,3 +30,37 @@ public class LongestSubStringWORepeatC {
     }
 
 }
+
+
+/*
+import java.util.HashSet;
+
+public class LongestUniqueSubstring {
+    public static int lengthOfLongestSubstring(String s) {
+        int left = 0, right = 0;
+        int maxLength = 0;
+        HashSet<Character> set = new HashSet<>();
+
+        while (right < s.length()) {
+            char current = s.charAt(right);
+            if (!set.contains(current)) {
+                set.add(current);
+                maxLength = Math.max(maxLength, right - left + 1);
+                right++;
+            } else {
+                set.remove(s.charAt(left));
+                left++;
+            }
+        }
+
+        return maxLength;
+    }
+
+    public static void main(String[] args) {
+        String input = "";
+        int result = lengthOfLongestSubstring(input);
+        System.out.println("Length of longest substring without repeating characters: " + result);
+    }
+}
+
+ */

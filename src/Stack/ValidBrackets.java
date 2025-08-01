@@ -11,11 +11,13 @@ public class ValidBrackets {
                 st.push(ch);
             }
             else{
-                if(st.size()==0) return false;
+                if(st.isEmpty()) return false;
                 if(st.peek() == '(') st.pop();
             }
         }
-        if(st.size()!=0) return false;
+        if(!st.isEmpty()) {
+            return false;
+        }
         return true;
     }
 

@@ -4,6 +4,7 @@ public class subSet {
     public static void main(String[] args) {
         int[] arr = {1,2,3};
         List<List<Integer>> ans = subset(arr);
+        System.out.println(ans);
         for(List<Integer> list : ans){
             System.out.println(list);
         }

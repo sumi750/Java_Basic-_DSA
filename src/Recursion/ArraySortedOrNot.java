@@ -46,6 +46,7 @@ public class ArraySortedOrNot {
 
     //All index of Target
     static ArrayList<Integer> list = new ArrayList<>();
+
     static void findAllIndex(int[] arr, int target, int index){
         if(index == arr.length) return;
         if(arr[index] == target){

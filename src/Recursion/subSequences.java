@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class subSequences {
     public static void main(String[] args) {
         String str = "abc";
-        subS("", str);
-        System.out.println(subSeq("", str));
+//        subS("", str);
+//        System.out.println(subSeq("", str));
         subSAscii("", str);
     }
 
@@ -14,7 +14,7 @@ public class subSequences {
     //Printing the SubSeq
     static void subS(String p , String str){
         if(str.isEmpty()) {
-            System.out.println(p);
+            System.out.print(p+ " ");
             return;
         }
 

@@ -52,7 +52,7 @@ class Student{
     double percent;
     int pass;
 
-    int marks[];
+    int[] marks;
     // default constructor
     public Student(){
                 marks = new int[3];
@@ -72,7 +72,7 @@ class Student{
     // Shallow COpy Constructor
     public Student(Student s1){
         System.out.println("Copy Constructor....");
-        marks = new int[3];
+            marks = new int[3];
             this.name = s1.name;
             this.roll = s1.roll;
             this.percent = s1.percent;

@@ -41,6 +41,14 @@ public class Basic1 {
         }
         return count;
     }
+
+    public static Node addF(int data, Node head){
+        Node x = new Node(data);
+        x.next = head;
+        return x;
+    }
+
+
     public static void main(String[] args) {
         Node a = new Node(5);
         Node b = new Node(4);
@@ -56,6 +64,37 @@ public class Basic1 {
         System.out.println();
         int len = length(a);
         System.out.println("Length of Node is "+ len);
+        displayR(a);
+        System.out.println();
+        a = addF(14, a);
+        display(a);
+        System.out.println(searchNode (a, 3));
+        System.out.println(searchR(a, 3, 0));
     }
+
+    public static boolean searchNode(Node head, int key){
+        if(head == null) return false;
+        int index = 0;
+        Node temp = head;
+        while(temp != null){
+            if(temp.data == key){
+                System.out.println("Index of key is " + index);
+                return true;
+            }
+            temp = temp.next;
+            index++;
+        }
+        return false;
+    }
+
+    public static boolean searchR(Node head, int key, int index){
+        if(head == null) return false;
+        if(head.data == key){
+            System.out.println(" index of key is " + index);
+            return true;
+        }
+        return searchR(head.next, key, index+1);
+    }
+
 
 }

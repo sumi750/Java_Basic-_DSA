@@ -50,6 +50,7 @@ public class RecursionBasic {
         System.out.println("Printing 0 to N");
         printNumber(n);   // Acc order  0 -> n
         System.out.println();
+
         System.out.println("Printing N to 0");
         printDec(n);     // Dec order   n -> 0
         System.out.println();

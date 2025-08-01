@@ -5,6 +5,7 @@ public class SearchIn_Roted {
     //Function for Rotated Sorted Array
     public static int searchR(int[] arr, int target){
         int pivot = findPivot(arr);
+        System.out.println(pivot);
         
         if(pivot == -1){
             //just do normal binary search because array is sorted
@@ -68,7 +69,7 @@ public class SearchIn_Roted {
 
     public static void main(String[] args) {
         int[] arr = {4,5,6,7,0,1,2};
-        int target = 0;
+        int target = 4;
         System.out.println(searchR(arr, target));
     }
 }

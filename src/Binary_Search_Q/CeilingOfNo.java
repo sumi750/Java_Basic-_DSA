@@ -13,20 +13,22 @@ public class CeilingOfNo {
         while(start <= end){
             int mid = (start+end)/2;
             if(arr[mid] == t){
-                return mid;
+                return mid;   //target itself is celling
             }
             else if (arr[mid] < t) {
                 start = mid+1;
             }
-            else{
+            else{    //arr[mid] > target
                 end = mid-1;
             }
         }
 
-        return start;  // pointing to the smallest number >= target (Ceiling of Number)
+//        return start;  // pointing to the smallest number >= target (Ceiling of Number)
         /*
         if we return end from this than we get the Floor of Target Element
          */
+
+        return end;   //floor of the target element
 
     }
 
@@ -40,7 +42,8 @@ public class CeilingOfNo {
         int target = sc.nextInt();
         int result = ceiling(arr, target);
         if(result != -1){
-            System.out.println("Ceiling of "+ target + " is "+ arr[result]);
+            System.out.println("floor of "+ target + " is "+ arr[result]);
+
         }
         else{
             System.out.println("No Ceiling found for "+ target);
