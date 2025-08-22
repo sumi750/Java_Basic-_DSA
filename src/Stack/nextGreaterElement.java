@@ -15,7 +15,7 @@ public class nextGreaterElement {
             while(!st.isEmpty() && st.peek() < arr[i]){
                 st.pop();
             }
-            if(st.size() == 0 )  {
+            if(st.isEmpty())  {
                 res[i] = -1;
             }
             else {

@@ -181,6 +181,11 @@ public class BST {
     }
 
 
+
+    private static void inOrderForList(Node root){
+
+    }
+
     public static void main(String[] args) {
         //InOrder of BST Traversal gives a sorted sequence
         Scanner sc = new Scanner(System.in);
@@ -214,11 +219,14 @@ public class BST {
         System.out.println();
         System.out.println("Root to Leaf Path ");
         Print2leaf(root, new ArrayList<>());
-          if(isVaild(root, null, null)){
+        if(isVaild(root, null, null)){
               System.out.println("Is valid");
-          }
-          else{
+        }
+        else{
               System.out.println("Not valid");
-          }
+        }
+
     }
+
+
 }

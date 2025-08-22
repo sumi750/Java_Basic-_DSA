@@ -1,0 +1,16 @@
+delteNode (node head, node index){
+        if(index == 0) return head.next;
+        if(head == null || index  < 0) return null;
+        int count = 0;
+        Node temp = head;
+        while( temp != null && count < index-1){
+            count++;
+            temp = temp.next;
+        }
+
+        if(temp == null) return head;
+
+        temp.next = temp.next.next ;
+        return head;
+}
+

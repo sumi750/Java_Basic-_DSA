@@ -73,7 +73,7 @@ public class createGraph {
         }
     }
 
-    //Delete and Edge from the Graph
+    //Delete  Edge from the Graph
     public void deleteEdge(int src, int des){
         adjList.get(src).removeIf(edge -> edge.des == des);
         adjList.get(des).removeIf(edge -> edge.des == src);
