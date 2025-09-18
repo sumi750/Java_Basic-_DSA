@@ -10,7 +10,8 @@ public class StringCommpression2 {
                 j++;
                 count++;
             }
-            sb.append(String.valueOf(count)).append(str.charAt(i));
+            if(count == 1) sb.append(str.charAt(i));
+            else sb.append(str.charAt(i)).append(String.valueOf(count));
         }
         return sb.toString();
     }
